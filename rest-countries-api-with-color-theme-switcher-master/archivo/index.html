@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/app/styles/styles.css">
+    <script src="https://kit.fontawesome.com/056e3c7290.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="tittle">
-                <h1>Where in the world?</h1>
+    <header class="header flex flex-ai-c">
+        <div class="container flex flex-ai-c">
+            <div class="header__tittle">
+                <a href="/">Where in the world ?</a>
             </div>            
-            <div class="header__mode">
-                <p>Dark Mode</p>
+            <div class="header__mode flex flex-ai-c">
+                <i class="fas fa-moon"></i><p>Dark Mode</p>
             </div>
         </div>
     </header>
+
+    <div class="searcher">
+        <div class="container">
+            <div class="searcher__input">
+                <input type="text" placeholder="Search for a country">
+            </div>
+            <div class="searcher__select">
+                <select name="" id="">
+                    <option disabled selected value>Filter by region</option>
+                    <option value="optionAf">Africa</option>
+                    <option value="optionAm">America</option>
+                    <option value="optionAs">Asia</option>
+                    <option value="optionEu">Europe</option>
+                    <option value="optionOc">Oceania</option>
+                </select>
+            </div>
+        </div> 
+    </div>
 </body>
 </html>
