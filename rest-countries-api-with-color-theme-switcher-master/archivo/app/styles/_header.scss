@@ -24,13 +24,14 @@
     }
 
     &__mode{
+        user-select: none;
         cursor: pointer;
         margin-left: auto;
         padding: 10px;
-        border-radius: 25px;
-        border-top: 1px solid rgba($color: #000000, $alpha: .05);
-        box-shadow: 0 2px 5px rgba($color: #000000, $alpha: .4);
-
+        //border-top: 1px solid rgba($color: #000000, $alpha: .05);
+        box-shadow: 0 0px 5px rgba($color: #8f8f8f, $alpha: .4);
+        border-radius: 20px;
+        
         i{
             font-size: 2rem;
             
@@ -45,8 +46,11 @@
             margin-left: 5px;
         }
 
-        &:hover{
+        &:active{
             background-color: rgba(0,0,0,.05);
+            box-shadow: none;
+            
+            filter: drop-shadow(0 0 5px rgba(192, 190, 190, 0.2));
         }
     }
 }

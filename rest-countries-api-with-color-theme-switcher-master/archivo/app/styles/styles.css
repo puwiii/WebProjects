@@ -124,13 +124,16 @@ a:visited {
 }
 
 .header__mode {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
   margin-left: auto;
   padding: 10px;
-  border-radius: 25px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0px 5px rgba(143, 143, 143, 0.4);
+          box-shadow: 0 0px 5px rgba(143, 143, 143, 0.4);
+  border-radius: 20px;
 }
 
 .header__mode i {
@@ -149,7 +152,95 @@ a:visited {
   margin-left: 5px;
 }
 
-.header__mode:hover {
+.header__mode:active {
   background-color: rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-filter: drop-shadow(0 0 5px rgba(192, 190, 190, 0.2));
+          filter: drop-shadow(0 0 5px rgba(192, 190, 190, 0.2));
+}
+
+.searcher {
+  padding: 40px 0;
+}
+
+.searcher > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.searcher__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  width: 40%;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.searcher__input i {
+  cursor: pointer;
+  padding: 15px;
+  font-size: 1.4rem;
+  color: #858585;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.searcher__input input {
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.searcher__select {
+  background-color: white;
+  margin-left: auto;
+  width: 20%;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+  border-radius: 7px;
+  position: relative;
+  border-radius: 7px;
+  overflow: hidden;
+  height: 50px;
+}
+
+.searcher__select .select {
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 15px 40px 15px 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.searcher__select .arrow {
+  pointer-events: none;
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.searcher__select .arrow i {
+  position: absolute;
+  font-size: 1.4rem;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
 }
 /*# sourceMappingURL=styles.css.map */

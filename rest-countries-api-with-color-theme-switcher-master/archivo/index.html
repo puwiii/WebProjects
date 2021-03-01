@@ -22,19 +22,28 @@
     <div class="searcher">
         <div class="container">
             <div class="searcher__input">
-                <input type="text" placeholder="Search for a country">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for a country...">
             </div>
             <div class="searcher__select">
-                <select name="" id="">
-                    <option disabled selected value>Filter by region</option>
+                <select class="select" name="" id="">
+                    <option hidden selected value>Filter by region</option>
                     <option value="optionAf">Africa</option>
                     <option value="optionAm">America</option>
                     <option value="optionAs">Asia</option>
                     <option value="optionEu">Europe</option>
                     <option value="optionOc">Oceania</option>
+                    <option value="optionOc">All</option>
                 </select>
+                <div class="arrow">
+                    <i class="fas fa-angle-down"></i>
+                </div>
             </div>
         </div> 
+    </div>
+
+    <div class="countries">
+        
     </div>
 </body>
 </html>
