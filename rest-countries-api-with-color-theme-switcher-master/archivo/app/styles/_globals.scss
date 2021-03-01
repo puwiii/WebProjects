@@ -65,7 +65,7 @@ a:visited{
     padding: 0px 20px;
 
     @include breakpoint-up(medium){
-        width: 90%;
+        width: 80%;
         max-width: 720px;
         margin: auto;
     }

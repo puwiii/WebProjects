@@ -1,0 +1,62 @@
+.countries{
+
+    > .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 40px;
+        row-gap: 40px;
+
+        @include breakpoint-down(medium){
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include breakpoint-down(small){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__country{
+        cursor: pointer;
+        background-color: $White;
+        border-radius: 7px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: .07);
+        font-size: $HomePageSize;
+        transition: transform .2s ease-in-out;
+
+        &-flag{
+            width: 100%;
+            min-height: 170px;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            @include breakpoint-down(small){
+                height: 60vw;
+            }
+        }
+
+        &-name{
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 20px 20px 40px 20px;
+        }
+
+        &-population, &-region, &-capital{
+            padding-bottom: 10px;
+            padding-left: 20px;
+            font-weight: 600;
+
+            > span{
+                font-weight: 400;
+            }
+        }
+
+        &-capital{
+            padding-bottom: 40px;
+        }
+       
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
