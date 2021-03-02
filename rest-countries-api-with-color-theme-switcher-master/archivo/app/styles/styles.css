@@ -312,6 +312,7 @@ a:visited {
   min-height: 170px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media (max-width: 39.9375em) {

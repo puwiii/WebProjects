@@ -29,7 +29,8 @@
             min-height: 170px;
             background-size: cover;
             background-repeat: no-repeat;
-
+            background-position: center;
+            
             @include breakpoint-down(small){
                 height: 60vw;
             }

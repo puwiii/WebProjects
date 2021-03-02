@@ -1,20 +1,72 @@
 
 let countries = document.getElementById('countries')
-
-let fragment = new DocumentFragment();
-
+let input = document.getElementById('input')
+let select = document.getElementById('select')
 let container = document.createElement("div")
-    container.classList.add('container')
+let countriesOnScreen
+container.classList.add('container')
 
-fetch('https://restcountries.eu/rest/v2/all')
-    .then(data=> data.json())
+getAllCountries()
+
+input.addEventListener('keyup',(e)=>{
+    if (e.keyCode === 13) {
+        // Cancel the default action, if needed
+        e.preventDefault();
+        // Trigger the button element with a click
+        getCountriesByName(input.value)
+    }
+})
+
+select.onchange= function() {
+    let region = select.value
+    if (region!=='all'){
+        getCountriesByRegion(region)
+    }
+    else{
+        getAllCountries()
+    }
+}
+
+function getCountriesByRegion(region){
+    container.innerHTML=""
+    fetch('https://restcountries.eu/rest/v2/region/'+region)
+    .then(data=>data.json())
     .then(data=>{
+        console.log('data buscada por region' +data)
+        countriesOnScreen = data
         data.map(function(country){
             buildCountry(country.flag, country.name, country.population, country.region, country.capital)
         })
     })
+}
+
+function getCountriesByName(name){
+    container.innerHTML=""
+    var countriesByName = 
+    countriesOnScreen.filter(function(country){
+        return country.name.toLowerCase().includes(name)
+    })
+    .map(function(country){
+        buildCountry(country.flag, country.name, country.population, country.region, country.capital)
+    })
+    
+}
+
+function getAllCountries(){
+    container.innerHTML=""
+    fetch('https://restcountries.eu/rest/v2/all')
+    .then(data=> data.json())
+    .then(data=>{
+        countriesOnScreen = data
+        data.map(function(country){
+            buildCountry(country.flag, country.name, country.population, country.region, country.capital)
+        })
+    })
+}
 
 function buildCountry(urlImage, name, population, region, capital){
+
+    let fragment = new DocumentFragment();
 
     let countryDiv = document.createElement("div")
         countryDiv.classList.add('countries__country')
@@ -46,6 +98,7 @@ function buildCountry(urlImage, name, population, region, capital){
     countryDiv.appendChild(countryRegion)
     countryDiv.appendChild(countryCapital)
 
-    fragment.appendChild(container)
-    countries.appendChild(fragment)
+    container.appendChild(fragment)
+    countries.appendChild(container)
+
 }
