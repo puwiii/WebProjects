@@ -1,12 +1,18 @@
 
 let countries = document.getElementById('countries')
 let input = document.getElementById('input')
+let searchIcon = document.getElementById('searchIcon')
 let select = document.getElementById('select')
 let container = document.createElement("div")
+
 let countriesOnScreen
 container.classList.add('container')
 
 getAllCountries()
+
+searchIcon.addEventListener('click',()=>{
+    getCountriesByName(input.value)
+})
 
 input.addEventListener('keyup',(e)=>{
     if (e.keyCode === 13) {
@@ -29,6 +35,7 @@ select.onchange= function() {
 
 function getCountriesByRegion(region){
     container.innerHTML=""
+    input.value=''
     fetch('https://restcountries.eu/rest/v2/region/'+region)
     .then(data=>data.json())
     .then(data=>{
