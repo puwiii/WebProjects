@@ -42,7 +42,7 @@ function getCountriesByRegion(region){
         console.log('data buscada por region' +data)
         countriesOnScreen = data
         data.map(function(country){
-            buildCountry(country.flag, country.name, country.population, country.region, country.capital)
+            buildCountry(country.alpha3Code, country.flag, country.name, country.population, country.region, country.capital)
         })
     })
 }
@@ -54,7 +54,7 @@ function getCountriesByName(name){
         return country.name.toLowerCase().includes(name.toLowerCase())
     })
     .map(function(country){
-        buildCountry(country.flag, country.name, country.population, country.region, country.capital)
+        buildCountry(country.alpha3Code, country.flag, country.name, country.population, country.region, country.capital)
     })
     
 }
@@ -66,16 +66,18 @@ function getAllCountries(){
     .then(data=>{
         countriesOnScreen = data
         data.map(function(country){
-            buildCountry(country.flag, country.name, country.population, country.region, country.capital)
+            console.log(country)
+            buildCountry(country.alpha3Code, country.flag, country.name, country.population, country.region, country.capital)
         })
     })
 }
 
-function buildCountry(urlImage, name, population, region, capital){
+function buildCountry(code ,urlImage, name, population, region, capital){
 
-    let fragment = new DocumentFragment();
 
-    let countryDiv = document.createElement("div")
+
+    let countryDiv = document.createElement("a")
+        countryDiv.href = "country.html?code="+code
         countryDiv.classList.add('countries__country')
             
     let countryFlag = document.createElement("div")
@@ -105,7 +107,6 @@ function buildCountry(urlImage, name, population, region, capital){
     countryDiv.appendChild(countryRegion)
     countryDiv.appendChild(countryCapital)
 
-    container.appendChild(fragment)
     countries.appendChild(container)
 
 }
