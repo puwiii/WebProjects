@@ -51,7 +51,7 @@ function getCountriesByName(name){
     container.innerHTML=""
     var countriesByName = 
     countriesOnScreen.filter(function(country){
-        return country.name.toLowerCase().includes(name)
+        return country.name.toLowerCase().includes(name.toLowerCase())
     })
     .map(function(country){
         buildCountry(country.flag, country.name, country.population, country.region, country.capital)
