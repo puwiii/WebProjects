@@ -1,6 +1,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *, *::before, *::after{
@@ -16,7 +17,36 @@ body{
     @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
     font-family: 'Nunito Sans', sans-serif;
     background-color: $VeryLightGray;
+    min-height: 100vh;
 }
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width:10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(70,80,100, .6);
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;  
+    background-color: transparent;
+}
+
+
+
+
 
 button{
     font-family: 'Nunito Sans', sans-serif;
@@ -45,6 +75,29 @@ a:any-link{
 
 a:visited{
     color: $DarkBlue;
+}
+
+.darkMode{
+
+    ::-webkit-scrollbar:vertical {
+        width:10px;
+        background-color: $VeryDarkBlue-DarkModeBackground;
+    }
+
+    background-color: $VeryDarkBlue-DarkModeBackground;
+    
+    a{
+        text-decoration: none;
+        color: $White;
+    }
+    
+    a:any-link{
+        color: $White;
+    }
+    
+    a:visited{
+        color: $White;
+    }
 }
 
 

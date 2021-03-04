@@ -9,43 +9,43 @@
     <title>Where in the world ? - By S.M.</title>
 </head>
 <body>
-    <header class="header flex flex-ai-c">
-        <div class="container flex flex-ai-c">
-            <div class="header__tittle">
-                <a href="/">Where in the world ?</a>
-            </div>            
-            <div class="header__mode flex flex-ai-c">
-                <i class="fas fa-moon"></i><p>Dark Mode</p>
-            </div>
-        </div>
-    </header>
-
-    <div class="searcher">
-        <div class="container">
-            <div class="searcher__input">
-                <i class="fas fa-search" id="searchIcon"></i>
-                <input id="input" type="text" placeholder="Search for a country...">
-            </div>
-            <div class="searcher__select">
-                <select class="select" name="" id="select">
-                    <option hidden selected value>Filter by region</option>
-                    <option value="africa">Africa</option>
-                    <option value="americas">America</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
-                    <option value="all">All</option>
-                </select>
-                <div class="arrow">
-                    <i class="fas fa-angle-down"></i>
+    <div id="content">
+        <header class="header flex flex-ai-c">
+            <div class="container flex flex-ai-c">
+                <div class="header__tittle">
+                    <a href="/">Where in the world?</a>
+                </div>            
+                <div class="header__mode flex flex-ai-c" id="darkButton">
+                    <i class="fas fa-moon"></i><p>Dark Mode</p>
                 </div>
             </div>
-        </div> 
+        </header>
+
+        <div class="searcher">
+            <div class="container">
+                <div class="searcher__input">
+                    <i class="fas fa-search" id="searchIcon"></i>
+                    <input id="input" type="text" placeholder="Search for a country...">
+                </div>
+                <div class="searcher__select">
+                    <select class="select" name="" id="select">
+                        <option hidden selected value>Filter by region</option>
+                        <option value="africa">Africa</option>
+                        <option value="americas">America</option>
+                        <option value="asia">Asia</option>
+                        <option value="europe">Europe</option>
+                        <option value="oceania">Oceania</option>
+                        <option value="all">All</option>
+                    </select>
+                    <div class="arrow">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="countries" id="countries"></div>
     </div>
-
-    <div class="countries" id="countries"></div>
-
-
 
     <script src="/app/scripts/code.js"></script>
 </body>

@@ -1,5 +1,25 @@
 
 let countryCode = getParameterByName('code')
+let darkButton = document.getElementById('darkButton')
+let content = document.getElementById('content')
+
+if(localStorage.getItem('darkMode')){
+    content.classList.add('darkMode')
+}
+else{
+    content.classList.remove('darkMode')
+}
+
+darkButton.addEventListener('click', ()=>{
+    content.classList.toggle('darkMode')
+    
+    if(content.classList.contains('darkMode')){
+        localStorage.setItem('darkMode', true)
+    }
+    else{
+        localStorage.setItem('darkMode', false)
+    }
+})
 
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

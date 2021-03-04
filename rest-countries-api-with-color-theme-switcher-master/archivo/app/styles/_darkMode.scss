@@ -1,0 +1,60 @@
+.darkMode{
+    min-height: 100vh;
+
+    .header{
+        background-color: $DarkBlue;
+        color: $VeryLightGray;
+    }
+
+    .searcher{
+        &__input{
+            background-color: $DarkBlue;
+            color: $VeryLightGray;
+
+            input{
+                background-color: $DarkBlue;
+                color: $VeryLightGray;
+            }
+        }
+
+        &__select{
+            color: $VeryLightGray;
+
+            .select{
+                background-color: $DarkBlue;
+                color: $VeryLightGray;
+            }
+            
+        }
+    }
+
+    .countries{
+        &__country{
+            background-color: $DarkBlue;
+            color: $VeryLightGray;
+        }
+    }
+
+    .back{
+        a{
+            background-color: $DarkBlue;
+
+            &:hover{
+                background-color: rgba(255, 255, 255, .2);
+            }
+        }
+    }
+
+    .country{
+        color: $White;
+
+        a{
+            background-color: $DarkBlue;
+
+            &:hover{
+                background-color: rgba(255, 255, 255, .2);
+            }
+        }
+    }
+}
+

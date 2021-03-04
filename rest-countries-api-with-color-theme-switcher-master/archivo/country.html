@@ -3,82 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app/styles/styles.css">
+    <link rel="stylesheet" href="/app/styles/styles-country.css">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/056e3c7290.js" crossorigin="anonymous"></script>
     <title>Where in the world ? - By S.M.</title>
 </head>
 <body>
-    <header class="header flex flex-ai-c">
-        <div class="container flex flex-ai-c">
-            <div class="header__tittle">
-                <a href="index.html">Where in the world ?</a>
-            </div>            
-            <div class="header__mode flex flex-ai-c">
-                <i class="fas fa-moon"></i><p>Dark Mode</p>
+    <div id="content">
+        <header class="header flex flex-ai-c">
+            <div class="container flex flex-ai-c">
+                <div class="header__tittle">
+                    <a href="index.html">Where in the world?</a>
+                </div>            
+                <div class="header__mode flex flex-ai-c" id="darkButton">
+                    <i class="fas fa-moon"></i><p>Dark Mode</p>
+                </div>
+            </div>
+        </header>
+    
+        <div class="back">
+            <div class="container">
+                <a href="index.html" class="back__button"><i class="fas fa-arrow-left"></i>Back</a>
             </div>
         </div>
-    </header>
-
-    <div class="back">
-        <div class="container">
-            <a href="index.html" class="back__button"><i class="fas fa-arrow-left"></i>Back</a>
+        
+    
+        <div class="country" id="countryDiv">
+            <div class="country__loading">
+                <div class="country__loading-circle">
+                    
+                </div>
+            </div>
+            <div class="container">
+                <div class="country__flag" id="flag">
+    
+                </div>
+                <div class="country__info">
+                    <h1 class="country__info-name" id="name">
+                        
+                    </h1>
+                    <div class="country__info-details">
+                        <div class="country__info-details-4">
+                            <p>
+                                Native Name: <span id="nativeName"></span>
+                            </p>
+                            <p>
+                                Population: <span id="population"></span>
+                            </p>
+                            <p>
+                                Region: <span id="region"></span>
+                            </p>
+                            <p>
+                                Sub Region: <span id="subRegion"></span>
+                            </p>              
+                            <p>
+                                Capital: <span id="capital"></span>
+                            </p>
+                        </div>
+                        <div class="country__info-details-3">
+                            <p>
+                                Top Level Domain: <span id="topLevelDomain"></span>
+                            </p>
+                            <p>
+                                Currencies: <span id="currencies"></span>
+                            </p>
+                            <p>
+                                Languages: <span id="languages"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="country__info-boundaries">
+                        <p>Border Countries:</p>
+                        <div class="country__info-boundaries-borders" id="borders"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
-
-    <div class="country" id="countryDiv">
-        <div class="country__loading">
-            <div class="country__loading-circle">
-                
-            </div>
-        </div>
-        <div class="container">
-            <div class="country__flag" id="flag">
-
-            </div>
-            <div class="country__info">
-                <h1 class="country__info-name" id="name">
-                    
-                </h1>
-                <div class="country__info-details">
-                    <div class="country__info-details-4">
-                        <p>
-                            Native Name: <span id="nativeName"></span>
-                        </p>
-                        <p>
-                            Population: <span id="population"></span>
-                        </p>
-                        <p>
-                            Region: <span id="region"></span>
-                        </p>
-                        <p>
-                            Sub Region: <span id="subRegion"></span>
-                        </p>              
-                        <p>
-                            Capital: <span id="capital"></span>
-                        </p>
-                    </div>
-                    <div class="country__info-details-3">
-                        <p>
-                            Top Level Domain: <span id="topLevelDomain"></span>
-                        </p>
-                        <p>
-                            Currencies: <span id="currencies"></span>
-                        </p>
-                        <p>
-                            Languages: <span id="languages"></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="country__info-boundaries">
-                    <p>Border Countries:</p>
-                    <div class="country__info-boundaries-borders" id="borders"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="/app/scripts/countryInfo.js"></script>
 </body>
 </html>

@@ -4,9 +4,33 @@ let input = document.getElementById('input')
 let searchIcon = document.getElementById('searchIcon')
 let select = document.getElementById('select')
 let container = document.createElement("div")
+let darkButton = document.getElementById('darkButton')
+let content = document.getElementById('content')
+
+if(localStorage.getItem('darkMode')){
+    content.classList.add('darkMode')
+    document.body.classList.add('darkMode')
+}
+else{
+    content.classList.remove('darkMode')
+    document.body.classList.remove('darkMode')
+}
+
+darkButton.addEventListener('click', ()=>{
+    content.classList.toggle('darkMode')
+    document.body.classList.toggle('darkMode')
+
+    if(content.classList.contains('darkMode')){
+        localStorage.setItem('darkMode', true)
+    }
+    else{
+        localStorage.setItem('darkMode', false)
+    }
+})
 
 let countriesOnScreen
 container.classList.add('container')
+
 
 getAllCountries()
 
