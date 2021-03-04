@@ -7,7 +7,8 @@ let container = document.createElement("div")
 let darkButton = document.getElementById('darkButton')
 let content = document.getElementById('content')
 
-if(localStorage.getItem('darkMode')){
+
+if(localStorage.getItem('darkMode')==='true'){
     content.classList.add('darkMode')
     document.body.classList.add('darkMode')
 }
@@ -63,7 +64,6 @@ function getCountriesByRegion(region){
     fetch('https://restcountries.eu/rest/v2/region/'+region)
     .then(data=>data.json())
     .then(data=>{
-        console.log('data buscada por region' +data)
         countriesOnScreen = data
         data.map(function(country){
             buildCountry(country.alpha3Code, country.flag, country.name, country.population, country.region, country.capital)
@@ -90,7 +90,6 @@ function getAllCountries(){
     .then(data=>{
         countriesOnScreen = data
         data.map(function(country){
-            console.log(country)
             buildCountry(country.alpha3Code, country.flag, country.name, country.population, country.region, country.capital)
         })
     })

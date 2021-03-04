@@ -3,7 +3,7 @@ let countryCode = getParameterByName('code')
 let darkButton = document.getElementById('darkButton')
 let content = document.getElementById('content')
 
-if(localStorage.getItem('darkMode')){
+if(localStorage.getItem('darkMode')==='true'){
     content.classList.add('darkMode')
 }
 else{
