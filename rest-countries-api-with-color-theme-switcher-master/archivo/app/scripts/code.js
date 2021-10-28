@@ -61,7 +61,7 @@ select.onchange= function() {
 function getCountriesByRegion(region){
     container.innerHTML=""
     input.value=''
-    fetch('https://restcountries.eu/rest/v2/region/'+region)
+    fetch('https://restcountries.com/rest/v2/region/'+region)
     .then(data=>data.json())
     .then(data=>{
         countriesOnScreen = data
@@ -85,7 +85,7 @@ function getCountriesByName(name){
 
 function getAllCountries(){
     container.innerHTML=""
-    fetch('https://restcountries.eu/rest/v2/all')
+    fetch('https://restcountries.com/rest/v2/all')
     .then(data=> data.json())
     .then(data=>{
         countriesOnScreen = data
