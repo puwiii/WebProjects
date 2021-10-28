@@ -30,7 +30,7 @@ function getParameterByName(name) {
 
 
 
-fetch('https://restcountries.eu/rest/v2/alpha/'+countryCode)
+fetch('https://restcountries.com/rest/v2/alpha/'+countryCode)
     .then(country => country.json())
     .then(country => {
 
